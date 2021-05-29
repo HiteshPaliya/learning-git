@@ -97,7 +97,7 @@ git ls-files
 git commit -m "Remove file that was accidently commited"
 
 #Now you can add files/folders in .gitignore and it won't be uploaded from now on!
-* Learn more what to add in .gitignore: [Github's gitignore repo](https://github.com/github/gitignore)*
+* Learn more what to add in .gitignore: https://github.com/github/gitignore
 ```
 
 #### Viewing history
@@ -109,7 +109,9 @@ git log --oneline --reverse
 
 #### Viewing Commit
 ```
-git show 921a2  #using identifier from `git log --oneline` (identifier's first few characters will also work if unique)
+git show 921a2  #using identifier from `git log --oneline` 
+(identifier's first few characters will work if it is unique)
+
 git show HEAD~1 #Backtrack from HEAD pointer to specified number backwards
 
 git show HEAD~1:bin/app.bin
