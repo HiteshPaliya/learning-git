@@ -42,3 +42,58 @@ echo hello > file2.txt
 git add file1.txt file2.txt  OR  git add *.txt  OR  git add .
 git status
 ```
+
+#### Commiting snapshots to save files in the repo
+```
+git commit -m "Initial Commit"
+```
+
+#### Skipping the staging area
+```
+echo test >> file1.txt
+git commit -am "Fix the bug"
+```
+
+#### View files in staging area
+```
+git ls-files
+```
+
+#### Removing file
+```
+rm file2.txt
+git status
+git ls-files
+git add files2.txt
+git commit -m "Remove unused code"
+```
+
+#### Removing/moving files
+```
+mv file1.txt main.js
+git status
+git add file1.txt main.js
+git status  
+  
+#All that in one command
+git mv main.js file1.txt
+git commit -m "Refactor code"
+```
+
+#### Ignoring files (Won't work for files and folders already residing in the repo)
+```
+mkdir logs
+echo testing logs/dev.log
+echo logs/ > .gitignore
+git add .gitignore
+git commit -m "Add gitignore"
+```
+
+
+
+
+
+
+
+
+
