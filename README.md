@@ -2,8 +2,7 @@
 
 ### This is the repo I was testing upon while learning how to use the git cli tool.  
 
-#### Configuring git    
-# User Settings  
+#### Configuring User Settings  
 ```
 git config --global user.name "My Name"
 git config --global user.email my_email@domain.com  
@@ -89,11 +88,43 @@ git add .gitignore
 git commit -m "Add gitignore"
 ```
 
+#### Removing files from staging area so that previous files can be added in .gitignore
+```
+git ls-files
+git rm -h
+git rm --cached -r <file> #Remove files recursively from staging (index) area
+git ls-files
+git commit -m "Remove file that was accidently commited"
 
+#Now you can add files/folders in .gitignore and it won't be uploaded from now on!
+* Learn more what to add in .gitignore: [Github's gitignore repo](https://github.com/github/gitignore)*
+```
 
+#### Viewing history
+```
+git log
+git log --oneline
+git log --oneline --reverse
+```
 
+#### Viewing Commit
+```
+git show 921a2  #using identifier from `git log --oneline` (identifier's first few characters will also work if unique)
+git show HEAD~1 #Backtrack from HEAD pointer to specified number backwards
 
+git show HEAD~1:bin/app.bin
+#View content of the files in the previous commit
+git show HEAD~1:.gitignore
+```
 
+#### View all the files of the previous commits (Files = blobs, Directories = tree)
+```
+git ls-tree HEAD~1
+```
 
-
-
+#### Unstaging files
+```
+git restore --staged file1.js
+OR
+git restore --staged .
+```
