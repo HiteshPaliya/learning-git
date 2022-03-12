@@ -1,6 +1,6 @@
 # README
 
-### This is the repo I was testing upon while learning how to use the git cli tool.  
+### Learning the git cli tool.  
 
 #### Configuring User Settings  
 ```
@@ -16,6 +16,10 @@ git config --global core.editor "code --wait"
 #### Opening golbal configuration settings in default editor  
 ```
 git config --global -e
+```
+#### Configure the default Branch name on repo init
+```
+git config --global init.defaultBranch main
 ```
 
 #### Handling end of lines  
@@ -129,4 +133,14 @@ git ls-tree HEAD~1
 git restore --staged file1.js
 OR
 git restore --staged .
+```
+
+#### Add local folder to Github repo
+```
+mkdir learning-git
+cd learning-git
+git init
+git branch -M main
+git remote add origin git@github.com:HiteshPaliya/learning-git.git
+git pull -u origin main
 ```
